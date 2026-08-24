@@ -422,22 +422,22 @@ The weights can be evaluated and adjusted during testing.
                                     │
                                     ▼
                          ┌─────────────────────┐
-                         │      API Routes        │
-                         │                       │
-                         │ JWT Authentication      │
-                         │ Courses                 │
-                         │ Units                   │
-                         │ Topics                  │
-                         │ Materials               │
-                         │ Search                  │
-                         │ Admin                   │
-                         └──────────┬───────────┘
+                         │      API Routes     │
+                         │                     │
+                         │ JWT Authentication  │
+                         │ Courses             │
+                         │ Units               │
+                         │ Topics              │
+                         │ Materials           │
+                         │ Search              │
+                         │ Admin               │
+                         └──────────┬──────────┘
                                     │
-                    ┌───────────────┴───────────────┐
+                    ┌───────────────┴──────────────-─┐
                     │                                │
                     ▼                                ▼
-          ┌───────────────────┐           ┌───────────────────┐
-          │    PostgreSQL       │           │   Python/FastAPI   │
+          ┌───────────────────┐             ┌───────────────────--┐
+          │    PostgreSQL       │           │   Python/FastAPI    │
           │                     │           │                     │
           │ Users               │           │ PDF Processing      │
           │ Courses             │           │ Text Extraction     │
@@ -447,15 +447,15 @@ The weights can be evaluated and adjusted during testing.
           │ Questions           │           └─────────┬───────────┘
           │ Uploads             │                     │
           │                     │                     │
-          │ Full-Text Search     │                     │
-          │ Views                │                     │
-          │ Functions            │                     │
-          │ Transactions         │                     │
+          │ Full-Text Search    │                     │
+          │ Views               │                     │
+          │ Functions           │                     │
+          │ Transactions        │                     │
           │                     │                     │
           │   ┌───────────┐     │                     │
           │   │ pgvector  │◄────┼─────────────────────┘
           │   └───────────┘     │
-          └───────────────────┘
+          └──────────────────--─┘
 ```
 
 ---
